@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRIME SOLUTION – חברת השמה וגיוס. גיוס והשמה ישירה לעסקים בישראל.">
+<title>PRIME SOLUTION | חברת השמה וגיוס</title>
+
+<style>
+:root{
+  --green:#16833f;
+  --green2:#0f6d35;
+  --lime:#9bcf18;
+  --yellow:#f4c51b;
+  --dark:#17261e;
+  --text:#1d2933;
+  --muted:#66736d;
+  --light:#f5f8f5;
+  --white:#fff;
+  --line:#e1e8e2;
+  --shadow:0 14px 40px rgba(21,55,35,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,"Noto Sans Hebrew",sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(10px);
+}
+.nav{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-mark{
+  width:48px;height:48px;border-radius:50%;
+  position:relative;
+  background:conic-gradient(from 220deg,var(--yellow),#b8d51d,var(--green),var(--green),var(--yellow));
+  box-shadow:inset 0 0 0 7px #fff;
+}
+.logo-mark:after{
+  content:"";
+  position:absolute;inset:12px;
+  border:3px solid #fff;border-radius:50%;
+}
+.logo-text strong{
+  display:block;
+  color:var(--green);
+  font-size:25px;
+  letter-spacing:1.5px;
+  line-height:1;
+}
+.logo-text span{
+  display:block;
+  color:#5c6d64;
+  font-size:13px;
+  margin-top:5px;
+  font-weight:700;
+}
+nav{display:flex;gap:25px;align-items:center;font-weight:700}
+nav a{color:#39483f}
+nav a:hover{color:var(--green)}
+.nav-btn{
+  background:var(--green);
+  color:#fff!important;
+  padding:11px 20px;
+  border-radius:28px;
+}
+.menu{display:none;font-size:30px;cursor:pointer}
+
+/* Hero */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 18%,rgba(155,207,24,.18),transparent 28%),
+    radial-gradient(circle at 88% 30%,rgba(22,131,63,.16),transparent 30%),
+    linear-gradient(135deg,#f8fbf8 0%,#fff 58%,#f4f8f3 100%);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:430px;height:430px;
+  border-radius:50%;
+  background:rgba(22,131,63,.05);
+  left:-180px;top:-150px;
+}
+.hero-inner{
+  min-height:650px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:55px;
+  position:relative;
+}
+.badge{
+  display:inline-block;
+  background:#eaf6d7;
+  color:var(--green2);
+  border:1px solid #d4e9b4;
+  border-radius:30px;
+  padding:8px 18px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(42px,6vw,72px);
+  line-height:1.05;
+  margin:0 0 22px;
+  color:#16221c;
+}
+.hero h1 span{color:var(--green)}
+.hero p{
+  font-size:21px;
+  color:var(--muted);
+  max-width:650px;
+  margin:0 0 30px;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:52px;
+  padding:0 27px;
+  border-radius:30px;
+  font-weight:800;
+  font-size:17px;
+  border:2px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 9px 22px rgba(22,131,63,.22)}
+.btn-primary:hover{background:var(--green2)}
+.btn-secondary{background:#fff;border-color:#dce5de;color:#25342c}
+.hero-card{
+  background:#fff;
+  border:1px solid #e1e9e2;
+  border-radius:35px;
+  padding:38px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.hero-card:before{
+  content:"";
+  position:absolute;
+  width:85px;height:85px;border-radius:50%;
+  background:linear-gradient(135deg,var(--yellow),var(--lime));
+  top:-25px;right:-22px;
+  opacity:.9;
+}
+.hero-card h3{font-size:27px;margin:0 0 20px}
+.check{display:flex;gap:12px;align-items:flex-start;margin:15px 0;font-size:17px}
+.check b{color:var(--green);font-size:20px}
+
+/* Stats */
+.stats{
+  background:var(--green);
+  color:#fff;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:30px 0;
+}
+.stat{
+  text-align:center;
+  padding:8px 15px;
+  border-left:1px solid rgba(255,255,255,.23);
+}
+.stat:last-child{border-left:0}
+.stat strong{display:block;font-size:36px;line-height:1.1}
+.stat span{font-size:15px;opacity:.92}
+
+/* Sections */
+section{padding:88px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 48px}
+.eyebrow{color:var(--green);font-weight:900;letter-spacing:.5px}
+.section-head h2{font-size:42px;margin:7px 0 12px;color:#18251e}
+.section-head p{font-size:18px;color:var(--muted);margin:0}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 8px 26px rgba(25,55,35,.06);
+  transition:.2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.icon{
+  width:58px;height:58px;border-radius:18px;
+  display:grid;place-items:center;
+  background:#edf7df;color:var(--green);
+  font-size:27px;margin-bottom:20px;
+}
+.card h3{font-size:23px;margin:0 0 8px}
+.card p{color:var(--muted);margin:0}
+
+/* Services */
+.services{background:var(--light)}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service{
+  background:#fff;border-radius:25px;padding:27px;
+  display:flex;gap:20px;align-items:flex-start;
+  border:1px solid var(--line);
+}
+.number{
+  font-size:38px;font-weight:900;color:#dfe9e1;line-height:1;
+}
+.service h3{margin:0 0 5px;font-size:22px}
+.service p{margin:0;color:var(--muted)}
+
+/* For employers */
+.employers{
+  background:linear-gradient(135deg,#102b1c,#196f39);
+  color:#fff;
+  position:relative;overflow:hidden;
+}
+.employers:after{
+  content:"";
+  position:absolute;width:360px;height:360px;border-radius:50%;
+  left:-150px;bottom:-200px;
+  background:rgba(244,197,27,.12);
+}
+.employer-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;
+}
+.employers h2{font-size:45px;line-height:1.15;margin:0 0 16px}
+.employers p{font-size:19px;color:rgba(255,255,255,.82)}
+.white-check{display:flex;gap:12px;margin:13px 0;font-size:17px}
+.white-check b{color:#c8e33c}
+.employer-box{
+  background:#fff;color:var(--text);
+  border-radius:30px;padding:34px;box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+.employer-box h3{margin-top:0;font-size:27px}
+
+/* Candidates */
+.candidate{background:#fff}
+.two-actions{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:auto}
+.big-link{
+  border:1px solid var(--line);border-radius:25px;padding:30px;
+  text-align:center;background:#fff;
+  box-shadow:0 8px 26px rgba(25,55,35,.06);
+}
+.big-link strong{display:block;font-size:23px;margin-bottom:6px}
+.big-link span{color:var(--muted)}
+.big-link.green{border-top:5px solid var(--green)}
+.big-link.yellow{border-top:5px solid var(--yellow)}
+
+/* Contact */
+.contact{background:#f5f8f5}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{
+  background:#fff;border:1px solid var(--line);border-radius:27px;padding:32px;
+}
+.contact-box h3{font-size:27px;margin-top:0}
+.contact-item{margin:14px 0}
+.contact-item b{display:block;color:var(--green);font-size:14px}
+.contact-item a{font-size:18px;font-weight:700}
+form{display:grid;gap:13px}
+input,textarea{
+  width:100%;padding:15px 16px;border-radius:14px;
+  border:1px solid #dce5de;font:inherit;outline:none;
+}
+textarea{min-height:120px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--green)}
+
+/* Footer */
+footer{background:#14231c;color:#fff;padding:45px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:35px}
+footer .logo-text strong{color:#b9df26}
+footer .logo-text span{color:#bfcac3}
+footer h4{font-size:18px;margin:0 0 12px}
+footer a,footer p{color:#bac7c0}
+.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;color:#8fa097;font-size:13px}
+
+/* WhatsApp */
+.whatsapp{
+  position:fixed;right:22px;bottom:22px;z-index:1100;
+  width:62px;height:62px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#25d366;color:#fff;font-size:29px;
+  box-shadow:0 8px 25px rgba(0,0,0,.22);
+  border:4px solid rgba(255,255,255,.75);
+}
+.whatsapp:hover{transform:scale(1.05)}
+
+@media(max-width:850px){
+  .nav{min-height:72px}
+  nav{display:none}
+  .menu{display:block}
+  .hero-inner,.employer-grid{grid-template-columns:1fr}
+  .hero-inner{min-height:auto;padding:70px 0}
+  .hero-card{margin-top:5px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-left:0}
+  .stat{padding:15px}
+  .cards,.service-grid,.contact-grid,.two-actions,.footer-grid{grid-template-columns:1fr}
+  section{padding:65px 0}
+  .section-head h2{font-size:35px}
+  .employers h2{font-size:38px}
+}
+@media(max-width:520px){
+  .container{width:90%}
+  .logo-text strong{font-size:20px}
+  .logo-text span{font-size:11px}
+  .logo-mark{width:42px;height:42px}
+  .hero h1{font-size:43px}
+  .hero p{font-size:18px}
+  .actions .btn{width:100%}
+  .hero-card{padding:27px}
+  .stat strong{font-size:29px}
+  .card,.service,.contact-box{padding:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="PRIME SOLUTION">
+      <div class="logo-mark"></div>
+      <div class="logo-text">
+        <strong>PRIME SOLUTION</strong>
+        <span>חברת השמה וגיוס</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#services">השירותים שלנו</a>
+      <a href="#why">למה אנחנו</a>
+      <a href="#employers">למעסיקים</a>
+      <a href="#jobs">למחפשי עבודה</a>
+      <a class="nav-btn" href="#contact">צור קשר</a>
+    </nav>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid #e1e8e2">
+    <div class="container" style="padding:15px 0 22px;display:grid;gap:12px;font-weight:700">
+      <a href="#services" onclick="closeMenu()">השירותים שלנו</a>
+      <a href="#why" onclick="closeMenu()">למה אנחנו</a>
+      <a href="#employers" onclick="closeMenu()">למעסיקים</a>
+      <a href="#jobs" onclick="closeMenu()">למחפשי עבודה</a>
+      <a href="#contact" onclick="closeMenu()">צור קשר</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <div class="badge">מקצועיות • התאמה נכונה • תוצאה</div>
+      <h1>העובד הנכון<br><span>מתחיל בגיוס נכון.</span></h1>
+      <p>
+        PRIME SOLUTION מספקת שירותי השמה וגיוס לחברות בישראל.
+        אנו מחברים בין צורכי העסק לבין מועמדים מתאימים,
+        עם יחס אישי וליווי לאורך כל התהליך.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#employers">מחפשים עובדים? דברו איתנו</a>
+        <a class="btn btn-secondary" href="#jobs">מחפשים עבודה?</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>גיוס שמתחיל בהבנה של העסק</h3>
+      <div class="check"><b>✓</b><span>הבנת דרישות המשרה והצרכים של החברה</span></div>
+      <div class="check"><b>✓</b><span>איתור וסינון ראשוני של מועמדים</span></div>
+      <div class="check"><b>✓</b><span>התאמה מקצועית ואישית לתפקיד</span></div>
+      <div class="check"><b>✓</b><span>ליווי אישי וזמינות לאורך התהליך</span></div>
+      <a class="btn btn-primary" style="width:100%;margin-top:12px" href="https://wa.me/972557704835">דברו איתנו ב-WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>5+</strong><span>שנות ניסיון</span></div>
+    <div class="stat"><strong>✓</strong><span>התאמה מקצועית</span></div>
+    <div class="stat"><strong>100%</strong><span>יחס אישי</span></div>
+    <div class="stat"><strong>24/7</strong><span>זמינות וגמישות</span></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">PRIME SOLUTION</div>
+      <h2>למה לבחור בנו?</h2>
+      <p>אנחנו לא רק מחפשים עובדים – אנחנו מחפשים את ההתאמה הנכונה לעסק ולמועמד.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">◎</div>
+        <h3>מועמדים איכותיים</h3>
+        <p>איתור וסינון מועמדים בהתאם לדרישות המשרה ולניסיון הנדרש.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>התאמה מדויקת</h3>
+        <p>בחינה מקצועית ואישית של המועמד והתאמה לצורכי החברה.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>שירות אישי ומהיר</h3>
+        <p>תקשורת ישירה, זמינות גבוהה וליווי לאורך כל תהליך הגיוס.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">השירותים שלנו</div>
+      <h2>פתרונות גיוס לעסקים בישראל</h2>
+      <p>מגוון תפקידים ותחומים – בהתאם לצרכים של כל חברה.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service"><div class="number">01</div><div><h3>גיוס עובדים</h3><p>איתור עובדים לתפקידים מגוונים בהתאם לדרישות החברה.</p></div></div>
+      <div class="service"><div class="number">02</div><div><h3>השמה ישירה</h3><p>חיבור בין מועמדים מתאימים לבין חברות בישראל להעסקה ישירה.</p></div></div>
+      <div class="service"><div class="number">03</div><div><h3>תעשייה וייצור</h3><p>עובדי ייצור, מפעילים, טכנאים, אנשי אחזקה ותפקידים טכניים.</p></div></div>
+      <div class="service"><div class="number">04</div><div><h3>לוגיסטיקה ומחסנים</h3><p>מחסנאים, מלקטים, מלגזנים, נהגים ועובדי לוגיסטיקה.</p></div></div>
+      <div class="service"><div class="number">05</div><div><h3>תחומים מקצועיים</h3><p>גיוס לתפקידי שירות, טכני, הרכבות, אלקטרוניקה ותפעול.</p></div></div>
+      <div class="service"><div class="number">06</div><div><h3>התאמה אישית</h3><p>היכרות עם צורכי העסק ובניית פתרון גיוס המותאם לחברה.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="employers" class="employers">
+  <div class="container employer-grid">
+    <div>
+      <div class="eyebrow" style="color:#c8e33c">למעסיקים</div>
+      <h2>מחפשים עובדים?<br>אנחנו נמצא את המתאימים.</h2>
+      <p>חסכו זמן ומשאבים בתהליך הגיוס וקבלו מועמדים שעברו סינון ראשוני והתאמה לתפקיד.</p>
+      <div class="white-check"><b>✓</b> איתור מועמדים לפי דרישות המשרה</div>
+      <div class="white-check"><b>✓</b> סינון ראשוני והתאמה מקצועית</div>
+      <div class="white-check"><b>✓</b> ליווי אישי ותקשורת ישירה</div>
+      <div class="white-check"><b>✓</b> גיוס והשמה ישירה לחברה</div>
+    </div>
+
+    <div class="employer-box">
+      <h3>בואו נמצא לכם עובד</h3>
+      <p>ספרו לנו בקצרה איזה עובד אתם מחפשים ונחזור אליכם.</p>
+      <a class="btn btn-primary" style="width:100%" href="https://wa.me/972557704835?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%97%D7%A4%D7%A9%2F%D7%AA%20%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D">אני מחפש עובדים</a>
+    </div>
+  </div>
+</section>
+
+<section id="jobs" class="candidate">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">למחפשי עבודה</div>
+      <h2>מחפשים את התפקיד הבא?</h2>
+      <p>שלחו לנו את הפרטים שלכם ונעזור לכם למצוא משרה שמתאימה לניסיון וליכולות שלכם.</p>
+    </div>
+
+    <div class="two-actions">
+      <a class="big-link green" href="https://wa.me/972557704835?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%97%D7%A4%D7%A9%2F%D7%AA%20%D7%A2%D7%91%D7%95%D7%93%D7%94">
+        <strong>מחפש/ת עבודה</strong>
+        <span>שלחו קורות חיים ב-WhatsApp</span>
+      </a>
+      <a class="big-link yellow" href="#contact">
+        <strong>שלחו פרטים</strong>
+        <span>ניצור איתכם קשר בהקדם</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">צור קשר</div>
+      <h2>מוכנים למצוא את הפתרון?</h2>
+      <p>בין אם אתם מעסיקים או מחפשי עבודה – אנחנו כאן בשבילכם.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>PRIME SOLUTION</h3>
+        <div class="contact-item"><b>טלפון</b><a href="tel:+972557704835">055-770-48-35</a></div>
+        <div class="contact-item"><b>WhatsApp</b><a href="https://wa.me/972557704835">שלחו הודעה</a></div>
+        <div class="contact-item"><b>אימייל</b><a href="mailto:Prime.solution.hr2023@gmail.com">Prime.solution.hr2023@gmail.com</a></div>
+        <div class="contact-item"><b>כתובת</b><span>חיפה, שדרות וינגייט 14</span></div>
+      </div>
+
+      <div class="contact-box">
+        <h3>השאירו פרטים</h3>
+        <form onsubmit="sendForm(event)">
+          <input id="name" type="text" placeholder="שם מלא" required>
+          <input id="phone" type="tel" placeholder="טלפון" required>
+          <textarea id="message" placeholder="במה נוכל לעזור?"></textarea>
+          <button class="btn btn-primary" type="submit">שלחו פנייה ב-WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#top">
+          <div class="logo-mark"></div>
+          <div class="logo-text"><strong>PRIME SOLUTION</strong><span>חברת השמה וגיוס</span></div>
+        </a>
+        <p style="margin-top:20px">מקצועיות • התאמה נכונה • תוצאה</p>
+      </div>
+      <div>
+        <h4>ניווט</h4>
+        <p><a href="#services">השירותים שלנו</a></p>
+        <p><a href="#why">למה אנחנו</a></p>
+        <p><a href="#employers">למעסיקים</a></p>
+        <p><a href="#jobs">למחפשי עבודה</a></p>
+      </div>
+      <div>
+        <h4>פרטי קשר</h4>
+        <p><a href="tel:+972557704835">055-770-48-35</a></p>
+        <p><a href="mailto:Prime.solution.hr2023@gmail.com">Prime.solution.hr2023@gmail.com</a></p>
+        <p>חיפה, שדרות וינגייט 14</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 PRIME SOLUTION – חברת השמה וגיוס. כל הזכויות שמורות.</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/972557704835" aria-label="WhatsApp">◔</a>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.style.display=m.style.display==='none'?'block':'none';
+}
+function closeMenu(){document.getElementById('mobileMenu').style.display='none';}
+function sendForm(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const msg=document.getElementById('message').value.trim();
+  const text=`שלום PRIME SOLUTION,%0Aשם: ${encodeURIComponent(name)}%0Aטלפון: ${encodeURIComponent(phone)}%0A${encodeURIComponent(msg)}`;
+  window.open(`https://wa.me/972557704835?text=${text}`,'_blank');
+}
+</script>
+
+</body>
+</html>
